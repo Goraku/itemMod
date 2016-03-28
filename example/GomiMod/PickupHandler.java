@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 public class PickupHandler 
 {
-	@SubscribeEvent
+    @SubscribeEvent
     public void itemPickupEvent(PlayerEvent.ItemPickupEvent event) {
         
         System.out.println("ItemPickupEvent☆");// イベント監視　要削除

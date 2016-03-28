@@ -1,6 +1,5 @@
 package com.example.GomiMod;
 
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

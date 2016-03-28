@@ -31,20 +31,24 @@ public class GomiMod
         if (event.getSide().isClient()) {
             ModelLoader.setCustomModelResourceLocation(itemAxeOfPillar, 0, new ModelResourceLocation(MODID + ":" + "TAxe0_model"));
         }
-    	System.out.println("FMLPreInitializationEvent☆start");// イベント監視　要削除
 
         // ハンドラ登録
-        MinecraftForge.EVENT_BUS.register(new PickupHandler());
-        MinecraftForge.EVENT_BUS.register(new PlayerChangedDimensionHandler());
+    	//MinecraftForge.EVENT_BUS.register(new PickupHandler());
+    	//MinecraftForge.EVENT_BUS.register(new PlayerChangedDimensionHandler());
+        //MinecraftForge.EVENT_BUS.register(new DestroyBlockHandler());
+        MinecraftForge.EVENT_BUS.register(new BreakHandler());
 
-    	System.out.println("FMLPreInitializationEvent☆end");// イベント監視　要削除
+        if(Debugmanager.DEBUG){
+        	System.out.println("FMLPreInitializationEvent☆");// イベント監視
+        }
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-
-        System.out.println("FMLInitializationEvent☆");// イベント監視　要削除
+    	if(Debugmanager.DEBUG){
+            System.out.println("FMLInitializationEvent☆");// イベント監視
+    	}
     }
 
 
