@@ -25,31 +25,29 @@ public class GomiMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-    	itemAxeOfPillar = new AxeOfPillar(); // アイテム生成
-    	GameRegistry.registerItem(itemAxeOfPillar, "itemAxeOfPillar"); // アイテム登録
-    	// アイテムにモデルJSONを設定
+        itemAxeOfPillar = new AxeOfPillar(); // アイテム生成
+        GameRegistry.registerItem(itemAxeOfPillar, "itemAxeOfPillar"); // アイテム登録
+        // アイテムにモデルJSONを設定
         if (event.getSide().isClient()) {
             ModelLoader.setCustomModelResourceLocation(itemAxeOfPillar, 0, new ModelResourceLocation(MODID + ":" + "TAxe0_model"));
         }
 
         // ハンドラ登録
-    	//MinecraftForge.EVENT_BUS.register(new PickupHandler());
-    	//MinecraftForge.EVENT_BUS.register(new PlayerChangedDimensionHandler());
+        //MinecraftForge.EVENT_BUS.register(new PickupHandler());
+        //MinecraftForge.EVENT_BUS.register(new PlayerChangedDimensionHandler());
         //MinecraftForge.EVENT_BUS.register(new DestroyBlockHandler());
         MinecraftForge.EVENT_BUS.register(new BreakHandler());
 
-        if(Debugmanager.DEBUG){
-        	System.out.println("FMLPreInitializationEvent☆");// イベント監視
+        if(DebugManager.DEBUG){
+            System.out.println("FMLPreInitializationEvent☆");// イベント監視
         }
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-    	if(Debugmanager.DEBUG){
+        if(DebugManager.DEBUG){
             System.out.println("FMLInitializationEvent☆");// イベント監視
-    	}
+        }
     }
-
-
 }

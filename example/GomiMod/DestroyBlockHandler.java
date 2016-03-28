@@ -5,17 +5,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class DestroyBlockHandler
 {
-	@SubscribeEvent
+    @SubscribeEvent
     public void destroyBlockEvent(PlayerEvent.BreakSpeed event)
-	{
-		if(Debugmanager.DEBUG){
-			System.out.println("PlayerEvent.BreakSpeed☆"+
-	        		"X"+event.pos.getX()+
-	        		"Y"+event.pos.getY()+
-	        		"Z"+event.pos.getZ()+","+
-	        		""+event.state.getBlock().getLocalizedName()+","+
-	        		event.state.getBlock().getBlockHardness(event.state, event.entity.worldObj, event.pos)+", " );// イベント監視
-		}
-	}
-
+    {
+        if(DebugManager.DEBUG){
+            System.out.println("PlayerEvent.BreakSpeed☆"+
+                "X"+event.pos.getX()+
+                "Y"+event.pos.getY()+
+                "Z"+event.pos.getZ()+","+
+                ""+event.state.getBlock().getLocalizedName()+","+
+                event.state.getBlock().getBlockHardness(event.state, event.entity.worldObj, event.pos)+", " );// イベント監視
+        }
+    }
 }

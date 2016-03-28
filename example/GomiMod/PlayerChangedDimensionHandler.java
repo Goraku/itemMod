@@ -8,7 +8,6 @@ public class PlayerChangedDimensionHandler
     @SubscribeEvent
     public void playerChangedDimensionEvent(PlayerEvent.PlayerChangedDimensionEvent event)
     {
-        
-        System.out.println("PlayerChangedDimensionEvent☆");// イベント監視　要削除
+        System.out.println("PlayerChangedDimensionEvent☆");// イベント監視
     }
 }
