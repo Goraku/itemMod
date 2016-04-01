@@ -1,6 +1,8 @@
 package com.example.RakuTool;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -33,7 +35,8 @@ public class RakuTool
         if (event.getSide().isClient()) {
             ModelLoader.setCustomModelResourceLocation(itemAxeOfPillar, 0, new ModelResourceLocation(MODID + ":" + "TAxe0_model"));
         }
-
+        // アイテムレシピ
+        GameRegistry.addShapedRecipe(new ItemStack(itemAxeOfPillar, 1),"bab"," a ","bab",'a',Blocks.stonebrick,'b',Blocks.stone_brick_stairs );
         // ハンドラ登録
         MinecraftForge.EVENT_BUS.register(new BreakHandler());
 
