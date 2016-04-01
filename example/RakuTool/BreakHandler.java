@@ -22,15 +22,15 @@ public class BreakHandler
 	                	event.getPlayer().getHeldItemMainhand().setItemDamage(event.getPlayer().getHeldItemMainhand().getItemDamage()+iCnt);//耐久減少
 	                	event.getPlayer().getHeldItemMainhand().getItem().showDurabilityBar(event.getPlayer().getHeldItemMainhand());//耐久表示更新
                 	}
+                    // 耐久チェック
+                	if(event.getPlayer().getHeldItemMainhand().getItemDamage() >= event.getPlayer().getHeldItemMainhand().getMaxDamage()){
+                		//耐久０
+                		AxeOfPillar.Broken(event.getPlayer().getHeldItemMainhand(), event.getPlayer());
+                	}
                 	if(DebugManager.DEBUG){
                 		System.out.println("だめーじ"+event.getPlayer().getHeldItemMainhand().getItemDamage());
                 	}
                 }
-                // 耐久チェック
-            	if(event.getPlayer().getHeldItemMainhand().getItemDamage() >= event.getPlayer().getHeldItemMainhand().getMaxDamage()){
-            		//耐久０
-            		AxeOfPillar.Broken(event.getPlayer().getHeldItemMainhand(), event.getPlayer());
-            	}
                 if(DebugManager.DEBUG){
             		System.out.println("canHarvestBlock="+event.getPlayer().getHeldItemMainhand().getItem().canHarvestBlock(event.state));
             		System.out.println("getHarvestLevel="+event.getPlayer().getHeldItemMainhand().getItem().getHarvestLevel(event.getPlayer().getHeldItemMainhand(),"axe"));
